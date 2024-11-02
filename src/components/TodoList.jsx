@@ -8,8 +8,14 @@ function TodoList(props) {
     <ul className='main'>
         {task.map((task, taskIndex) => {
             return (
-                <TodoCard {...props} key={taskIndex} index={taskIndex}>
-                    <p>{task}</p>
+                <TodoCard
+                    {...props}
+                    key={taskIndex}
+                    index={taskIndex}
+                    completed={task.completed}
+                    title={task.title}
+                >
+                    {task.title}
                 </TodoCard>
             )
         })}

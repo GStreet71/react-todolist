@@ -5,7 +5,7 @@ function TodoInput(props) {
     const {handleAddTask, input, setInput, handleSaveEditedTask, editIndex} = props
     
     return (
-        <>
+        <div className='main'>
             <div className="title">
                 <h1>To-Do List</h1>
             </div>
@@ -40,7 +40,7 @@ function TodoInput(props) {
                     Add
                 </button>
             </header>
-        </>
+        </div>
     )
 }
 

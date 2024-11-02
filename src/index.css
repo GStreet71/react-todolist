@@ -18,8 +18,7 @@ button {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 14px;
-  background: hsl(214, 100%, 97%);
+  background: black;
   gap: 14px;
 }
 
@@ -33,12 +32,26 @@ header {
   align-items: stretch;
 }
 
-header,
-.main, .title {
+.main {
   max-width: 800px;
   width: 100%;
-  margin: 0 auto;
+  margin: 14 auto;
+  background: hsl(214, 100%, 97%);
+  
+}
+
+.title, header {
+  margin-bottom: 30px;
   gap: 14px;
+}
+
+.area {
+  min-height: 100vh;
+  max-width: 900px;
+  padding: 30px 100px;
+  width: 100%;
+  margin: 0 auto;
+  background: hsl(214, 100%, 97%) ;
 }
 
 header input {
@@ -46,6 +59,15 @@ header input {
   border-radius: 14px;
   outline: none;
   width: 100%;
+}
+
+::placeholder {
+  color: hsl(0, 0%, 85%);
+  opacity: .5; Firefox
+}
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: hsl(0, 0%, 90s%);
 }
 
 header button {
@@ -72,6 +94,7 @@ header input {
 
 p {
   font-size: 0.9em;
+  font-weight: bold;
 }
 
 .main {
@@ -110,6 +133,10 @@ p {
 
 .actionsContainer button i {
   color: white;
+}
+
+.done {
+  margin: 0px 25px;
 }
 
 #edit {
