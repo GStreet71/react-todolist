@@ -2,17 +2,39 @@ import React, {useState} from 'react'
 
 function TodoInput(props) {
 
-    const {handleAddTask, input, setInput} = props
-
+    const {handleAddTask, input, setInput, handleSaveEditedTask, editIndex} = props
+    
     return (
         <header>
-            <input value={input} onChange={(e) => {
+            <input
+                value={input}
+                onChange={(e) => {
                 setInput(e.target.value)
-            }} placeholder="Enter To-Do List item..."></input> 
-            <button onClick={() => {
-                handleAddTask(input)
+                }}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        if(editIndex !== null) {
+                            handleSaveEditedTask()
+                        } else {
+                            handleAddTask(input)
+                        }
+                        setInput('')                        
+                    }
+                }}
+                placeholder="Enter To-Do List item..."
+            >
+            </input> 
+            <button
+                onClick={() => {
+                if(editIndex !== null) {
+                    handleSaveEditedTask()
+                } else {
+                    handleAddTask(input)
+                }
                 setInput('')
-            }}>Add</button>
+            }}>
+                Add
+            </button>
         </header>
     )
 }

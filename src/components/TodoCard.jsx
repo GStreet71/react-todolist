@@ -1,13 +1,18 @@
 import React from 'react'
 
 function TodoCard(props) {
-    const {children, handleRemoveTask, index, handleEditTask} = props
+    const {children, handleRemoveTask, index, handleEditTask, handleMoveUp, handleMoveDown} = props
     return (
         <li className="todoItem">
             {children}
             <div className='actionsContainer'>
                 <button onClick={() => {
-                    handleEditTask(index)
+                    handleMoveUp(index)
+                }}>
+                    <i class="fa-solid fa-caret-up"></i>
+                </button>
+                <button onClick={() => {
+                    handleEditTask(index)                    
                 }}>
                     <i className="fa-solid fa-pen-to-square"></i>
                 </button>
@@ -15,6 +20,11 @@ function TodoCard(props) {
                     handleRemoveTask(index)
                 }}>
                     <i className="fa-regular fa-trash-can"></i>
+                </button>
+                <button onClick={() => {
+                    handleMoveDown(index)
+                }}>
+                    <i class="fa-solid fa-caret-down"></i>
                 </button>
 
             </div>
