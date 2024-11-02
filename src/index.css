@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #202124;
+  color: hsl(225, 6%, 13%);
 }
 
 h1,
@@ -19,8 +19,13 @@ button {
   display: flex;
   flex-direction: column;
   padding: 14px;
-  background: #eff6ff;
+  background: hsl(214, 100%, 97%);
   gap: 14px;
+}
+
+.title {
+  display: flex;
+  align-items: stretch;
 }
 
 header {
@@ -29,7 +34,7 @@ header {
 }
 
 header,
-.main {
+.main, .title {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
@@ -44,17 +49,20 @@ header input {
 }
 
 header button {
+  padding: 14px 18px;
   border-radius: 14px;
-  background: transparent;
-  transition-duration: 200ms;
+  /* background: transparent; */
+  transition: .5s ease;
   cursor: pointer;
+  background: hsl(207, 100%, 60%);
 }
 
 header button:hover {
-  opacity: 0.7;
+  /* opacity: 0.7; */
+  background: hsl(207, 100%, 50%);
 }
 
-header button,
+/* header button, */
 header input {
   padding: 14px 18px;
   border: none;
@@ -88,21 +96,52 @@ p {
 .actionsContainer {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
 }
 
 .actionsContainer button {
-  transition-duration: 200ms;
+  transition: .5s ease;
   border: none;
-  background: transparent;
+  border-radius: 5px;
+  /* background: transparent; */
   cursor: pointer;
+  padding: 12px;
 }
 
-.actionsContainer button:hover {
-  opacity: 0.7;
+.actionsContainer button i {
+  color: white;
 }
 
+#edit {
+  background: hsl(207, 100%, 60%);
+}
 
+#edit:hover {
+  background: hsl(207, 100%, 40%);
+}
+
+#remove {
+  background: hsl(0, 100%, 60%);
+}
+
+#remove:hover {
+  background: hsl(0, 100%, 45%);
+}
+
+.moveContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.move {
+  padding: 0px 5px !important;
+  background: transparent;
+}
+
+.move i {
+  color: hsl(225, 6%, 13%) !important;
+}
 
 @media (min-width: 640px) {
 

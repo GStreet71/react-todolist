@@ -6,27 +6,28 @@ function TodoCard(props) {
         <li className="todoItem">
             {children}
             <div className='actionsContainer'>
-                <button onClick={() => {
-                    handleMoveUp(index)
-                }}>
-                    <i class="fa-solid fa-caret-up"></i>
-                </button>
-                <button onClick={() => {
+                <button id="edit" onClick={() => {
                     handleEditTask(index)                    
                 }}>
                     <i className="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button onClick={() => {
+                <button id="remove" onClick={() => {
                     handleRemoveTask(index)
                 }}>
                     <i className="fa-regular fa-trash-can"></i>
                 </button>
-                <button onClick={() => {
-                    handleMoveDown(index)
-                }}>
-                    <i class="fa-solid fa-caret-down"></i>
-                </button>
-
+                <div className="moveContainer">
+                    <button className="move" onClick={() => {
+                        handleMoveUp(index)
+                    }}>
+                        <i className="fa-solid fa-caret-up"></i>
+                    </button>
+                    <button className="move" onClick={() => {
+                        handleMoveDown(index)
+                    }}>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </button>
+                </div>
             </div>
         </li>
   )

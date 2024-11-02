@@ -5,37 +5,42 @@ function TodoInput(props) {
     const {handleAddTask, input, setInput, handleSaveEditedTask, editIndex} = props
     
     return (
-        <header>
-            <input
-                value={input}
-                onChange={(e) => {
-                setInput(e.target.value)
-                }}
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                        if(editIndex !== null) {
-                            handleSaveEditedTask()
-                        } else {
-                            handleAddTask(input)
+        <>
+            <div className="title">
+                <h1>To-Do List</h1>
+            </div>
+            <header>     
+                <input
+                    value={input}
+                    onChange={(e) => {
+                    setInput(e.target.value)
+                    }}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                            if(editIndex !== null) {
+                                handleSaveEditedTask()
+                            } else {
+                                handleAddTask(input)
+                            }
+                            setInput('')                        
                         }
-                        setInput('')                        
+                    }}
+                    placeholder="Enter To-Do List item..."
+                >
+                </input> 
+                <button
+                    onClick={() => {
+                    if(editIndex !== null) {
+                        handleSaveEditedTask()
+                    } else {
+                        handleAddTask(input)
                     }
-                }}
-                placeholder="Enter To-Do List item..."
-            >
-            </input> 
-            <button
-                onClick={() => {
-                if(editIndex !== null) {
-                    handleSaveEditedTask()
-                } else {
-                    handleAddTask(input)
-                }
-                setInput('')
-            }}>
-                Add
-            </button>
-        </header>
+                    setInput('')
+                }}>
+                    Add
+                </button>
+            </header>
+        </>
     )
 }
 
